@@ -3,7 +3,7 @@ async function getWeather() {
     if (city === '') return alert("Please enter a city name.");
 
     const apiKey = 'a9b036814e7d4efd9ee174846252508';
-    const url = `https://api.weatherapi.com/v1/search.json?key=a9b036814e7d4efd9ee174846252508&q=Rineyville`;
+    const url = `https://api.weatherapi.com/v1/`;
 
     try {
         const response = await fetch(url);
