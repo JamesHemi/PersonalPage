@@ -2,7 +2,7 @@ async function getWeather() {
     const city = document.getElementById('cityInput').value.trim();
     if (city === '') return alert("Please enter a city name.");
 
-    const apiKey = 'a9b036814e7d4efd9ee174846252508';
+    const Key = 'a9b036814e7d4efd9ee174846252508';
     const url = `https://api.weatherapi.com/v1/`;
 
     try {
