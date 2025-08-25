@@ -2,21 +2,15 @@ async function getWeather() {
     const city = document.getElementById('cityInput').value.trim();
     if (city === '') return alert("Please enter a city name.");
 
-    const Key = 'a9b036814e7d4efd9ee174846252508';
-    const url = `https://api.weatherapi.com/v1/`;
+   const url = 'https://api.weatherstack.com/current?access_key={b4cad932ef8c1cf44d97b03517f59b71}&query=fetch:ip';
+const options = {
+	method: 'GET'
+};
 
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error('City not found');
-        const data = await response.json();
-
-        const output = `
-            <p>City: ${data.name}</p>
-            <p>Temperature: ${data.main.temp}°C</p>
-            <p>Weather: ${data.weather[0].description}</p>
-        `;
-        document.getElementById('weatherOutput').innerHTML = output;
-    } catch (error) {
-        document.getElementById('weatherOutput').textContent = error.message;
-    }
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
 }
